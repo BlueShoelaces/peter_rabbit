@@ -9,4 +9,11 @@ public class LauncherTest extends TestCase {
 		assertEquals("sup", "sup");
 		
 	}
+	
+	public void testMainMethodCallsRun() throws Exception {
+		
+		
+		Launcher.main(new String[0]);
+		
+	}
 }
