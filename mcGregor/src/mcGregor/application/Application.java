@@ -1,10 +1,13 @@
 package mcGregor.application;
 
-import java.util.Scanner;
+import java.util.ArrayList;
 
 import mcGregor.enemy.Enemy;
+import mcGregor.io.KeyboardInput;
 import mcGregor.peter.Peter;
+import mcGregor.weapon.BattleAxe;
 import mcGregor.weapon.Sword;
+import mcGregor.weapon.Weapon;
 
 public class Application implements ApplicationInterface {
 
@@ -13,15 +16,14 @@ public class Application implements ApplicationInterface {
 	private Peter peter;
 	private Enemy enemy;
 
-	private Scanner keyboard;
-
 	private Application() {
-		Sword sword = new Sword();
-		this.peter = new Peter(sword);
+		final ArrayList<Weapon> weapons = new ArrayList<Weapon>();
+		weapons.add(new BattleAxe());
+		weapons.add(0, new Sword());
+
+		this.peter = new Peter(weapons);
 
 		this.enemy = new Enemy("Mr. McGregor", 100);
-
-		this.keyboard = new Scanner(System.in);
 	}
 
 	public static ApplicationInterface singleton() {
@@ -39,24 +41,57 @@ public class Application implements ApplicationInterface {
 	@Override
 	public void run() {
 
-		boolean keepGoing = false;
+		System.out.println("Oh, no! It's " + this.enemy.getName() + "!");
+		System.out.println();
+
+		int menuOption;
+		boolean keepGoing = true;
 
 		do {
-			keepGoing = executeGameLoopIteration();
+			displayMenuOptions();
+
+			menuOption = KeyboardInput.singleton().nextInt();
+			KeyboardInput.singleton().nextLine();
+
+			System.out.println();
+
+			keepGoing = determineWhetherToContinue(menuOption, keepGoing);
 		} while (keepGoing);
 
 		System.out.println("Peter ran away!");
-		this.keyboard.close();
+		KeyboardInput.singleton().close();
 	}
 
-	private boolean executeGameLoopIteration() {
-		boolean keepGoing;
+	private void makePeterFight() {
 		this.peter.fight(this.enemy);
+	}
 
-		System.out.println("Again? (y/n)");
-		keepGoing = this.keyboard.nextLine().equalsIgnoreCase("y") ? true : false;
+	private void displayMenuOptions() {
+		System.out.println("What to do?");
+		System.out.println(" 1 Fight!");
+		System.out.println(" 2 Change weapon (and attack)");
+		System.out.println(" 3 Run away");
+	}
 
-		System.out.println();
+	private boolean determineWhetherToContinue(int menuOption, boolean keepGoing) {
+		switch (menuOption) {
+		case 1:
+			makePeterFight();
+			break;
+
+		case 2:
+			this.peter.switchWeapon();
+			makePeterFight();
+			break;
+
+		case 3:
+			keepGoing = false;
+			break;
+
+		default:
+			System.out.println("Invalid option. Select 1 - 3.");
+			System.out.println();
+		}
 		return keepGoing;
 	}
 
