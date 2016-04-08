@@ -1,5 +1,9 @@
 package mcGregor;
 
+import mcGregor.enemy.Enemy;
+import mcGregor.peter.Peter;
+import mcGregor.weapon.Sword;
+
 public class McGregorApplication implements Application {
 
 	private static Application instance;
@@ -22,8 +26,13 @@ public class McGregorApplication implements Application {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-
+		Sword sword = new Sword();
+		Peter peter = new Peter(sword);
+		
+		Enemy mrMcGregor = new Enemy("Mr. McGregor", 100);
+		
+		peter.attack(mrMcGregor);
+		
 	}
 
 	@Override

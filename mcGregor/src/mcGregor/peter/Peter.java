@@ -1,15 +1,18 @@
 package mcGregor.peter;
 
+import mcGregor.enemy.Enemy;
+import mcGregor.weapon.Sword;
+
 public class Peter {
 
-	private boolean hasAttacked;
-
-	public void attack() {
-		this.hasAttacked = true;
+	private Sword sword;
+	
+	public Peter(Sword sword) {
+		this.sword = sword;
 	}
 
-	public boolean hasAttacked() {
-		return this.hasAttacked;
+	public void attack(Enemy enemy) {
+		this.sword.swingAt(enemy);
 	}
 
 }
