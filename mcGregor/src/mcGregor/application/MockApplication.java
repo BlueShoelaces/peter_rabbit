@@ -1,6 +1,6 @@
-package mcGregor;
+package mcGregor.application;
 
-public class MockApplication implements Application {
+public class MockApplication implements ApplicationInterface {
 
 	private int numberOfTimesRunCalled;
 
@@ -13,7 +13,6 @@ public class MockApplication implements Application {
 		this.numberOfTimesRunCalled++;
 	}
 
-	@Override
 	public int getNumberOfTimesRunCalled() {
 		return this.numberOfTimesRunCalled;
 	}

@@ -1,10 +1,10 @@
-package mcGregor;
+package mcGregor.application;
 
 public class Launcher {
 
 	public static void main(String[] args) {
 
-		McGregorApplication.singleton().run();
+		Application.singleton().run();
 	}
 
 }

@@ -11,8 +11,8 @@ public class Peter {
 		this.sword = sword;
 	}
 
-	public void attack(Enemy enemy) {
-		this.sword.swingAt(enemy);
+	public void fight(Enemy enemy) {
+		this.sword.attack(enemy);
 	}
 
 }
