@@ -43,7 +43,7 @@ public class EnemyTest extends TestCase {
 
 	public void testEnemyCannotDie() throws Exception {
 
-		String name = "Bad Guy";
+		String name = "Pac-Man Ghost";
 		double maxHealth = 42.0;
 
 		Enemy enemy = new Enemy(name, maxHealth);
