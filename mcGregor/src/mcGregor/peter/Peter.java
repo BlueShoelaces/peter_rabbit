@@ -2,8 +2,9 @@ package mcGregor.peter;
 
 import java.util.ArrayList;
 
-import mcGregor.enemy.Enemy;
+import mcGregor.enemy.EnemyInterface;
 import mcGregor.io.KeyboardInput;
+import mcGregor.weapon.CuddlyPaws;
 import mcGregor.weapon.Weapon;
 
 public class Peter {
@@ -14,10 +15,14 @@ public class Peter {
 	public Peter(ArrayList<Weapon> weapons) {
 
 		this.weapons = weapons;
+
+		if (weapons.isEmpty()) {
+			weapons.add(new CuddlyPaws());
+		}
 		this.currentWeapon = this.weapons.get(0);
 	}
 
-	public void fight(Enemy enemy) {
+	public void fight(EnemyInterface enemy) {
 		this.currentWeapon.attack(enemy);
 	}
 
@@ -33,6 +38,14 @@ public class Peter {
 		System.out.println();
 
 		this.currentWeapon = this.weapons.get(weaponSelection);
+	}
+
+	public Weapon getCurrentWeapon() {
+		return this.currentWeapon;
+	}
+
+	public ArrayList<Weapon> getWeapons() {
+		return this.weapons;
 	}
 
 }

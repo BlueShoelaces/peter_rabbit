@@ -1,6 +1,6 @@
 package mcGregor.enemy;
 
-public class Enemy {
+public class Enemy implements EnemyInterface {
 
 	private String name;
 	private double currentHealth;

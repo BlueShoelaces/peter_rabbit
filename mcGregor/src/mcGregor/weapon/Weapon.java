@@ -1,21 +1,15 @@
 package mcGregor.weapon;
 
-import mcGregor.enemy.Enemy;
+import mcGregor.enemy.EnemyInterface;
 
 public abstract class Weapon {
 
-	private final double DEFAULT_ATTACK_STRENGTH = 2;
 	private final double ATTACK_STRENGTH_RANDOM_FACTOR = 0.75;
 
 	protected String name;
 	protected double maxAttackStrength;
 
-	public Weapon() {
-		this.name = "Cuddly Paws";
-		this.maxAttackStrength = this.DEFAULT_ATTACK_STRENGTH;
-	}
-
-	public void attack(Enemy enemy) {
+	public void attack(EnemyInterface enemy) {
 		System.out.println(
 				"Peter swings his " + this.name.toUpperCase() + " at " + enemy.getName() + ".");
 		System.out.println();

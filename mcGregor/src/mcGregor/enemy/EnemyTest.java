@@ -53,4 +53,13 @@ public class EnemyTest extends TestCase {
 		assertEquals(maxHealth, enemy.getCurrentHealth());
 	}
 
+	public void testImplementsEnemyInterface() throws Exception {
+
+		Class<?>[] implementedInterfaces = Enemy.class.getInterfaces();
+		assertEquals(1, implementedInterfaces.length);
+
+		Class<?> firstInterface = implementedInterfaces[0];
+		assertEquals(EnemyInterface.class, firstInterface);
+	}
+
 }

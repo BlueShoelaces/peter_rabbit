@@ -3,6 +3,7 @@ package mcGregor.application;
 import java.util.ArrayList;
 
 import mcGregor.enemy.Enemy;
+import mcGregor.enemy.EnemyInterface;
 import mcGregor.io.KeyboardInput;
 import mcGregor.peter.Peter;
 import mcGregor.weapon.BattleAxe;
@@ -14,7 +15,7 @@ public class Application implements ApplicationInterface {
 	private static ApplicationInterface INSTANCE;
 
 	private Peter peter;
-	private Enemy enemy;
+	private EnemyInterface enemy;
 
 	private Application() {
 		final ArrayList<Weapon> weapons = new ArrayList<Weapon>();
