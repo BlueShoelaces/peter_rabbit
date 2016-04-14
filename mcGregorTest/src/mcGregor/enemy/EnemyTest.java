@@ -1,4 +1,4 @@
-package mcgregor.enemy;
+package mcGregor.enemy;
 
 import junit.framework.TestCase;
 import mcGregor.enemy.Enemy;
