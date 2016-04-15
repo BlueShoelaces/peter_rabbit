@@ -7,6 +7,7 @@ import mcGregor.enemy.EnemyInterface;
 import mcGregor.io.KeyboardInput;
 import mcGregor.peter.Peter;
 import mcGregor.weapon.BattleAxe;
+import mcGregor.weapon.CuddlyPaws;
 import mcGregor.weapon.Sword;
 import mcGregor.weapon.Weapon;
 
@@ -14,13 +15,14 @@ public class Application implements ApplicationInterface {
 
 	private static ApplicationInterface INSTANCE;
 
-	private Peter peter;
-	private EnemyInterface enemy;
+	private final Peter peter;
+	private final EnemyInterface enemy;
 
 	private Application() {
 		final ArrayList<Weapon> weapons = new ArrayList<Weapon>();
-		weapons.add(new BattleAxe());
 		weapons.add(0, new Sword());
+		weapons.add(new BattleAxe());
+		weapons.add(new CuddlyPaws());
 
 		this.peter = new Peter(weapons);
 
@@ -96,4 +98,7 @@ public class Application implements ApplicationInterface {
 		return keepGoing;
 	}
 
+	public Peter getPeter() {
+		return this.peter;
+	}
 }

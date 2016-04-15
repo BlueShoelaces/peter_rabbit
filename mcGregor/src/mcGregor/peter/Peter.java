@@ -10,7 +10,7 @@ import mcGregor.weapon.Weapon;
 public class Peter {
 
 	private Weapon currentWeapon;
-	private ArrayList<Weapon> weapons;
+	private final ArrayList<Weapon> weapons;
 
 	public Peter(ArrayList<Weapon> weapons) {
 
@@ -30,8 +30,8 @@ public class Peter {
 
 		System.out.println("Which weapon?");
 		for (int weaponIndex = 0; weaponIndex < this.weapons.size(); weaponIndex++) {
-			System.out.println(
-					" " + (weaponIndex + 1) + " " + this.weapons.get(weaponIndex).getName());
+			System.out.println(" " + (weaponIndex + 1) + " "
+					+ this.weapons.get(weaponIndex).getName());
 		}
 		final int weaponSelection = KeyboardInput.singleton().nextInt() - 1;
 		KeyboardInput.singleton().nextLine();
