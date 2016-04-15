@@ -6,8 +6,12 @@ import junit.framework.TestSuite;
 public class WeaponTests {
 
 	public static Test suite() {
-		TestSuite suite = new TestSuite(WeaponTest.class.getName());
+		final TestSuite suite = new TestSuite(WeaponTest.class.getName());
 
+		suite.addTestSuite(BaseballBatTest.class);
+		suite.addTestSuite(BattleAxeTest.class);
+		suite.addTestSuite(CuddlyPawsTest.class);
+		suite.addTestSuite(SwordTest.class);
 		suite.addTestSuite(WeaponTest.class);
 
 		return suite;
