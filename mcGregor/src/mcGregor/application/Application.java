@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import mcGregor.enemy.Enemy;
 import mcGregor.enemy.EnemyInterface;
 import mcGregor.io.KeyboardInput;
+import mcGregor.peter.BaseballBat;
 import mcGregor.peter.Peter;
 import mcGregor.weapon.BattleAxe;
 import mcGregor.weapon.Sword;
@@ -21,6 +22,7 @@ public class Application implements ApplicationInterface {
 		final ArrayList<Weapon> weapons = new ArrayList<Weapon>();
 		weapons.add(new BattleAxe());
 		weapons.add(0, new Sword());
+		weapons.add(new BaseballBat());
 
 		this.peter = new Peter(weapons);
 
