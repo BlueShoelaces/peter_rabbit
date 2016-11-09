@@ -34,4 +34,10 @@ public abstract class Weapon {
 	public String getName() {
 		return this.name;
 	}
+	
+	public double getMaxAttackStrength(){
+		return this.maxAttackStrength;
+	}
+	
+	
 }

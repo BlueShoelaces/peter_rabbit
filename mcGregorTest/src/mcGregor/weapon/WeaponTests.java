@@ -7,8 +7,11 @@ import mcGregor.peter.BaseballBatTest;
 public class WeaponTests {
 
 	public static Test suite() {
-		TestSuite suite = new TestSuite(WeaponTest.class.getName());
+		final TestSuite suite = new TestSuite(WeaponTest.class.getName());
 
+		suite.addTestSuite(BattleAxeTest.class);
+		suite.addTestSuite(CuddlyPawsTest.class);
+		suite.addTestSuite(SwordTest.class);
 		suite.addTestSuite(WeaponTest.class);
 		suite.addTestSuite(BaseballBatTest.class);
 		return suite;

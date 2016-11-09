@@ -1,5 +1,7 @@
 package mcGregor.application;
 
+import mcGregor.peter.Peter;
+
 public class MockApplication implements ApplicationInterface {
 
 	private int numberOfTimesRunCalled;
@@ -15,6 +17,12 @@ public class MockApplication implements ApplicationInterface {
 
 	public int getNumberOfTimesRunCalled() {
 		return this.numberOfTimesRunCalled;
+	}
+
+	@Override
+	public Peter getPeter() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
