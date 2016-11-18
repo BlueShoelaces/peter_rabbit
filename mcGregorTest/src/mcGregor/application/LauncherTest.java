@@ -4,6 +4,12 @@ import junit.framework.TestCase;
 
 public class LauncherTest extends TestCase {
 
+	@Override
+	protected void setUp() throws Exception {
+		Application.setApplication(null);
+		super.setUp();
+	}
+
 	public void testMainMethodRunsApplication() throws Exception {
 
 		MockApplication mockApplication = new MockApplication();

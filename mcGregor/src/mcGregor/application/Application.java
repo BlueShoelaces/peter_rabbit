@@ -20,9 +20,9 @@ public class Application implements ApplicationInterface {
 
 	private Application() {
 		final ArrayList<Weapon> weapons = new ArrayList<Weapon>();
-		weapons.add(0, new Sword());
+		weapons.add(0, new CuddlyPaws());
+		weapons.add(new Sword());
 		weapons.add(new BattleAxe());
-		weapons.add(new CuddlyPaws());
 
 		this.peter = new Peter(weapons);
 
@@ -98,6 +98,7 @@ public class Application implements ApplicationInterface {
 		return keepGoing;
 	}
 
+	@Override
 	public Peter getPeter() {
 		return this.peter;
 	}

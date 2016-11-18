@@ -10,6 +10,7 @@ public class WeaponTests {
 
 		suite.addTestSuite(BattleAxeTest.class);
 		suite.addTestSuite(CuddlyPawsTest.class);
+		suite.addTestSuite(LethalVegetableTest.class);
 		suite.addTestSuite(SwordTest.class);
 		suite.addTestSuite(WeaponTest.class);
 		return suite;

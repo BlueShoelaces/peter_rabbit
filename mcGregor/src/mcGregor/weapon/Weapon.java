@@ -10,8 +10,10 @@ public abstract class Weapon {
 	protected double maxAttackStrength;
 
 	public void attack(EnemyInterface enemy) {
-		System.out.println(
-				"Peter swings his " + this.name.toUpperCase() + " at " + enemy.getName() + ".");
+		String uppercaseWeaponName = this.name.toUpperCase();
+		String enemyName = enemy.getName();
+
+		System.out.println("Peter swings his " + uppercaseWeaponName + " at " + enemyName + ".");
 		System.out.println();
 
 		double attackPowerLowerBound = this.maxAttackStrength * this.ATTACK_STRENGTH_RANDOM_FACTOR;
@@ -34,10 +36,9 @@ public abstract class Weapon {
 	public String getName() {
 		return this.name;
 	}
-	
-	public double getMaxAttackStrength(){
+
+	public double getMaxAttackStrength() {
 		return this.maxAttackStrength;
 	}
-	
-	
+
 }
