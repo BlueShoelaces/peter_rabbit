@@ -21,7 +21,6 @@ public class MockApplication implements ApplicationInterface {
 
 	@Override
 	public Peter getPeter() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
